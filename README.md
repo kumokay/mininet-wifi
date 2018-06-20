@@ -1,3 +1,24 @@
+# mininet-wifi for containernet
+- TL;DR kumokay creates a fork from mininet-wifi
+- Objective: 
+  - use mininet-wifi together with containernet
+  - modify mininet-wifi modules as needed
+
+## Usage: 
+1. install containernet or maxinet
+2. git clone this repo
+3. install wifi_dependency only: util/install.sh -W
+4. add this repo to your python path, then you can use it!
+  - sample code: see example/mobility.py
+
+## Todo:
+- remove redundant codes in those inheritance classes...
+  - only did this to mininet_wifi/node.py so far
+
+------
+
+
+
 ![](https://github.com/ramonfontes/miscellaneous/blob/master/mininet-wifi/mininet-wifi-logo.png)
 
 ### About Mininet-WiFi

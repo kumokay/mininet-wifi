@@ -6,9 +6,10 @@ import sys
 
 from mininet.node import Controller
 from mininet.log import setLogLevel, info
-from mininet.wifi.node import OVSKernelAP
-from mininet.wifi.cli import CLI_wifi
-from mininet.wifi.net import Mininet_wifi
+sys.path.append('/home/kumokay/github/mininet-wifi')
+from mininet_wifi.wifi.node import OVSKernelAP
+from mininet_wifi.wifi.cli import CLI_wifi
+from mininet_wifi.wifi.net import Mininet_wifi
 
 
 def topology(coord):
