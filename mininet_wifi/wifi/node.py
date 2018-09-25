@@ -36,7 +36,7 @@ from mininet_wifi.wifi.module import module
 
 
 # The rest of the codes are first copy from mininet_wifi.wifi.node.py,
-# then modify these classes as WHAT CLASS INHERITANCE SHOULD BE 
+# then modify these classes as WHAT CLASS INHERITANCE SHOULD BE
 
 
 def createClass_wifiNode(base):
@@ -561,7 +561,7 @@ def createClass_wifiNode(base):
             debug('\n')
             debug('added intf {} ({}) to node {}\n'.format(intf, port, self.name))
             if self.inNamespace:
-                if hasattr(self, 'type'):  # kumokay: why we need this line? 
+                if hasattr(self, 'type'):  # kumokay: why we need this line?
                     debug('moving', intf, 'into namespace for', self.name, '\n')
                     moveIntfFn(intf.name, self)
 
@@ -630,12 +630,12 @@ def createClass_wifiNode(base):
             # This should be examined
             # self.cmd('ip link set lo ' + lo)  # kumokay: mininet-wifi use ip link but mininet use ifconfig.
             self.cmd( 'ifconfig lo ' + lo )     # kumokay: try mininet's way.
-            return 
+            return
 
         #@classmethod
         #def setup(cls):
         #    "Make sure our class dependencies are available"
-        #    pathCheck('mnexec', 'ip addr', moduleName='Mininet')  
+        #    pathCheck('mnexec', 'ip addr', moduleName='Mininet')
         # kumokay: mininet-wifi use ip link but mininet use ifconfig.
         # kumokay: try mininet's way. dont overwrite the method.
 
@@ -1312,7 +1312,9 @@ class OVSAP(AP):
     @classmethod
     def isOldOVS(cls):
         "Is OVS ersion < 1.10?"
-        return StrictVersion(cls.OVSVersion) < StrictVersion('1.10')
+        # TODO: Katie: cannot found cls.OVSVersion...
+        # return StrictVersion(cls.OVSVersion) < StrictVersion('1.10')
+        return True
 
     def dpctl(self, *args):
         "Run ovs-ofctl command"
@@ -1504,5 +1506,3 @@ class OVSAP(AP):
 
 OVSKernelAP = OVSAP
 physicalAP = OVSAP
-
-
